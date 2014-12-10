@@ -57,7 +57,7 @@ public class InstagramApp {
 	private static final String AUTH_URL = "https://api.instagram.com/oauth/authorize/";
 	private static final String TOKEN_URL = "https://api.instagram.com/oauth/access_token";
 	private static final String API_URL = "https://api.instagram.com/v1";
-    private static final String IMAGES_URL = API_URL+"/users/self/feed";
+    private static final String IMAGES_URL = API_URL+"/tags/selfie/media/recent";
 
 	private static final String TAG = "InstagramAPI";
 
@@ -182,7 +182,7 @@ public class InstagramApp {
 				Log.i(TAG, "Fetching user info");
 				int what = WHAT_FINALIZE;
 				try {
-					URL url = new URL(API_URL + "/users/" + mSession.getId() + "/?access_token=" + mAccessToken);
+					URL url = new URL(API_URL +"?access_token=" + mAccessToken);
 
 					Log.d(TAG, "Opening URL " + url.toString());
 					HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
